@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr100 = [];
+    var arr10000 = [];
+    console.count();
+    for(var i=0; i<100; i++){
+        arr100.push(i);
+        console.count();
+
+    }
+    for(var i=0; i<10000; i++){
+        arr10000.push(i);
+    }
+
+    function test1(){
+        console.time();
+        for(var i=0, len=arr10000.length; i<len; i++){
+            document.write(i);
+        }
+        console.timeEnd();
+    }
+    function test2(){
+        console.time();
+        for(var i=0; i<arr10000.length; i++){
+            document.write(i);
+        }
+        console.timeEnd();
+    }
+    test1();
+    test2();
+</script>
+
+</body>
+</html>
