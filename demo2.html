@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var reg = /\bis\b/;
+//    var bb = reg.test("this is haha");
+//    console.log(bb);
+//const regExp1 = /^A/; // 匹配以'A'开头的字符串
+//console.log(regExp1.test('an A')); // false
+//console.log(regExp1.test('An E')); // true
+//const regExp2 = /[^abc]/;  // 匹配任何没有包含在方括号中的字符
+//console.log(regExp2.test('abc')); // false
+//console.log(regExp2.test('efg')); // true
+//console.log(regExp2.test('ab')); // true
+
+
+//// 匹配0个数字
+//const regExp1 = /\d*?/;
+//// 匹配1个数字
+//const regExp2 = /\d+?/;
+//// 匹配1个'a'
+//const regExp3 = /a{1,3}?/;
+//let str = '123a';
+//console.log(str.replace(regExp1, 'abc')); //abc123a
+//console.log(str.replace(regExp2, 'abc')); // abc23a
+//console.log(str.replace(regExp3, 'abc')); // 123abc
+
+//const regExp1 = /(foo) (bar) \2 \1/;
+//const regExp2 = /(foo) (bar) \1 \2/;
+//let str1 = 'foo bar bar foo bar';
+//let str2 = 'foo bar foo bar';
+//console.log(str1.replace(regExp1, '666')); // 666 bar
+//console.log(str2.replace(regExp2, '666')); // 666
+//console.log(str1.replace(regExp2, '666')); // foo bar bar foo bar
+
+//
+//const regExp1 = /(?:foo)\1/;
+//console.log('foofoobar'.replace(regExp1, 'abc')); // foofoobar
+//console.log('foofoo\1bar'.replace(regExp1, 'abc'));// fooabcbar
+//const regExp2 = /(foo)\1/;
+//console.log('foofoobar'.replace(regExp2, 'abc')); // abcbar
+//
+// var str = 'Tech,Sales,内容1,内容2';
+// var reg = /Tech|Sales|内容1|内容2/g;
+// var myArr;
+// var arr = [
+//     []
+// ];
+//while((myArr = reg.exec(str)) !== null){
+//    console.log(reg.exec(str));
+//}
+//console.log(arr);
+//
+//let str = '<OPT>ION  value="待处理">待处理</OPTION>';
+//let regExp = /^<.*?>/;
+//console.log(regExp.exec(str));
+
+
+//let str = 'dgfhfgh254bhku289fgdhdy675gfh';
+//let regExp = /\d+/g;
+//console.log(str.match(regExp));
+
+//    //让2013-6-7 变成 2013.6.7
+//    var str = '2013-6-7';
+//    var reg = /[-]/g;
+//    str.replace(reg,'.');
+//    console.log(str);
+
+
+//let str = '2013-6-7';
+//let regExp = /-/g;
+//console.log(str.replace(regExp, '.')); //2013-6-7
+
+//"IT面试题博客中包含很多  <a href='http://hi.baidu.com/mianshiti/blog/category/微软面试题'> 微软面试题 </a> "
+//let str = 'IT面试题博客中包含很多  <a href="http://hi.baidu.com/mianshiti/blog/category/微软面试题">微软面试题</a>';
+//let regExp = /<a(?: [^=XXFN}*)+href="(.*)"(?: {FNXX=]*)*>/;
+//console.log(regExp.exec(str)[1]);
+
+
+
+//
+//var s1 = "get-element-by-id";
+//
+//function camelCased(str) {
+//    let regExp = /-(\w)/g;
+//    str.replace(regExp, function(match, p) {
+//        return p.toUpperCase();
+//    })
+//}
+//camelCased(s1);
+
+
+//    var str = 'fjdifj[1,2,3]';
+//    var reg = /\[.*\]/;
+//    console.log(reg.exec(str));
+
+//
+//    var str = '123-456-7890';
+//    var reg = /^(?:\d{3}-){2}\d{4}$/;
+//    console.log(reg.exec(str));
+
+//$1,023,032.03
+//    var str = '$1,023,032.03';
+//    var reg = /^\$\d{1,3}(,\d{1,3})*(\.\d{1,2})?/;
+//
+//    // /^\$\d{1,3}(,\d{3})*(\.\d{2})?$/;
+//    console.log(reg.exec(str));
+
+
+</script>
+</body>
+</html>
