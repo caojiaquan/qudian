@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var timer1 = function(){
+        return setTimeout(function(){
+            console.log('11111');
+        },500)
+    }
+    var timer2 = function(){
+        return setTimeout(function(){
+            console.log('22222');
+        },200)
+    }
+    function* gen(){
+        yield timer1();
+        yield timer2();
+    }
+    var bb = gen();
+    console.log(bb.next());
+    console.log(bb.next());
+    console.log(bb.next());
+
+
+
+
+</script>
+</body>
+</html>
