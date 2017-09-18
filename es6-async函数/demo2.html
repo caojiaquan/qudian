@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// 调用gen函数不会立即求值，等到第一个next执行才会去计算
+// 遇到return语句会标识遍历结束，返回值为调用next的value值，done为true;
+   function* gen(){
+       yield 789+78;
+       return 6789;
+       yield 787789+78;
+
+   }
+   var bb = gen();
+   console.log(bb.next());// {value: 867, done: false}
+   console.log(bb.next());// {value: 6789, done: true}
+   console.log(bb.next());// {value: undefined, done: true}
+
+
+
+</script>
+</body>
+</html>
