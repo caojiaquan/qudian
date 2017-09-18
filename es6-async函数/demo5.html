@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var myIterable = {};
+    myIterable[Symbol.iterator] = function* () {//遍历器生成函数。
+        yield 1;
+        yield 2;
+        yield 3;
+    };
+    console.log([...myIterable]);
+     // [1, 2, 3]
+</script>
+</body>
+</html>

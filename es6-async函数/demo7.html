@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function* gen(){
+        console.log('start');
+        console.log(`a, ${yield}`);
+        console.log(`b, ${yield}`);
+
+    }
+    var bb = gen();
+
+    bb.next();//启动generater函数
+    bb.next('a');
+    bb.next('b');
+
+
+</script>
+</body>
+</html>

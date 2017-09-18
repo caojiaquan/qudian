@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function* fe(){
+        let pre = 0;
+        let right = 1;
+        for (;;) {
+            [pre,right] = [right, pre + right];
+            yield pre;
+        }
+
+    }
+    for (var p of fe()) {
+        if (p > 10) {
+            break;
+        }
+        console.log(p);
+    }
+</script>
+</body>
+</html>

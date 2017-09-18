@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function* gen(){
+        yield 1;
+        yield 2;
+        yield 3;
+        yield 4;
+        yield 5;
+    }
+    var bb = gen();
+    console.log(bb.next());
+    console.log(bb.next(10));
+    console.log(bb.next());
+
+    for(var p of gen()){
+        console.log(p);
+    }
+
+
+    var arr = [2,3,41,1]
+    for(var p of arr){
+        console.log(p);
+    }
+</script>
+</body>
+</html>

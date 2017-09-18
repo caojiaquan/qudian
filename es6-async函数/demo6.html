@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function* gen(){
+        yield 1+1
+    }
+    var gen = gen();
+    console.log(gen[Symbol.iterator]() === gen);
+</script>
+</body>
+</html>
