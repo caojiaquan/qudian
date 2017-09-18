@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //不用yield就变成了一个单纯的暂缓函数
+    function* gen(){
+        console.log('haha');
+    }
+    var bb = gen();
+    setTimeout(function(){
+        bb.next();//报错！！
+    },3000);
+
+//同样定义一个函数名相同的generater函数和普通函数不会重载，后定义的覆盖先定义的
+    function gen(){
+        console.log('lala');
+    }
+    gen();
+
+
+
+
+
+
+</script>
+</body>
+</html>
