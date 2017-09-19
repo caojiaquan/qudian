@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    function* gen(){
+        yield 789;
+        yield this.name = 'lisi';
+    }
+
+    function F(){
+        return gen.call(gen.prototype);
+    }
+    var bb = new F();
+
+    console.log(bb.next());
+    console.log(bb.next());
+    console.log(bb.next());
+
+    console.log(bb.name);
+</script>
+</body>
+</html>

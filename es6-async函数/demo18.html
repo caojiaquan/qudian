@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    function aa(){
+        this.name = 'lisi';
+        this.say = function(){
+            console.log('haha');
+        }
+    }
+    function bb(){
+        aa.call(this);
+    }
+    var dd = new bb();
+    console.log(dd.name);
+
+</script>
+</body>
+</html>

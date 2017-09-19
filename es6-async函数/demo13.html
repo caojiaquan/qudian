@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function* generator(){
+        yield 78;
+        return 234;
+    }
+    var aa = generator();
+
+
+    console.log(aa.next());
+//    console.log(aa.next());
+    console.log(aa);
+
+
+</script>
+</body>
+</html>

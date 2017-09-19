@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    function* gen(){
+        yield ;
+    }
+    var aa = gen();
+    console.log(aa.next());
+    console.log(aa.next());
+    //没有try catch语句，抛出错误
+    aa.throw(new Errow('chucuole'));
+</script>
+</body>
+</html>

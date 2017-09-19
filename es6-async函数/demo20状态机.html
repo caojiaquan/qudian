@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+//    let aa = false;
+//    function fn(){
+//        if(aa){
+//            console.log('success');
+//        }else{
+//            console.log('fail');
+//        }
+//        aa = !aa;
+//    }
+//    fn();
+//    fn();
+
+
+    function* gen(){
+        while(true){
+            console.log('success');
+            yield;
+            console.log('fail');
+            yield;
+        }
+    }
+    var bb = gen();
+    bb.next();
+    bb.next();
+    bb.next();
+//    console.log(bb.next());
+//console.log(bb.next());
+
+</script>
+</body>
+</html>
