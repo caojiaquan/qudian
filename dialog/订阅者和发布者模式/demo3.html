@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var Event = (function(){
+        var list = {},
+            listen,
+            trriger,
+            remove;
+        listen = function(key, fn){
+            if (!list[key]) {
+                list[key] = [];
+            }
+            list[key].push(fn);
+
+
+        };
+        trigger = function(key, fn){
+            var key = Array.prototype.shift.call(arguments);
+
+        }
+        console.log(list);
+
+        return {
+            listen
+        };
+
+    })();
+
+    var fn = function(){
+        console.log('.........您订阅了.....公众号');
+    }
+
+    Event.listen('公众号',fn);
+    Event.listen('lalala',fn);
+
+</script>
+</body>
+</html>
