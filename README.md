@@ -6,9 +6,9 @@
 
 generater函数：是异步式编程的一种解决方式，一种理解方式是它是一个状态机，里边封装了n多个状态  
 
-写法：function * gen(){
-yield    bb();
-}
+写法：function * gen(){  
+yield    bb();  
+}  
 调用方式：和普通函数一样，后边跟括号
 返回值： 返回的是一个指向内部的指针变量，也就是iterator对象
 机制：调用generater函数时，遇到yield就会暂停在这里，下一次进来可以接着执行，遇到第一个yield，他的next()方法返回的是一个对象{value: yield返回的值， done: boolen标识遍历是否结束}
