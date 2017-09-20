@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var oPlatform = (function(){
+
+        var list = {},
+            listen,
+            trigger,
+            remove;
+
+        listen = function(key, fn){
+            if(!list[key]){
+                list[key] = [];
+            }
+            list[key].push(fn);
+        };
+        trigger = function(key){
+            if(list[key]){
+                list[key].forEach(function(item){
+                    item();
+                });
+                console.log(key + '推送了消息');
+            }else{
+                console.log('不存在'+ key + '公众号');
+            }
+        };
+        remove = function(key, fn){
+            if(list[key]){
+                if(fn){
+                    list[key] = list[key].filter(function(item){
+                        return item !== fn;
+                    });
+                    console.log('移除'+ fn);
+                }else{
+                    delete list[key];
+                    console.log('hahahha' + fn);
+                }
+            }
+        }
+
+        return {
+            list,
+            listen,
+            trigger,
+            remove
+        }
+    })();
+    var fn = function(){
+        console.log('已成功订阅微博了');
+    }
+    var fn1 = function(){
+        console.log('通知邮件');
+    }
+    oPlatform.listen('微博公众号', fn);
+    oPlatform.listen('微博公众号', fn1);
+    oPlatform.trigger('微博公众号');
+    oPlatform.remove('微博公众号',fn);
+    console.log(oPlatform.list);
+
+
+
+
+
+</script>
+</body>
+</html>
