@@ -22,14 +22,33 @@
 
 
         };
-        trigger = function(key, fn){
+        trigger = function(key){
             var key = Array.prototype.shift.call(arguments);
-
+            if(!list[key]){
+                return;
+            }
+            list[key].forEach(function(item){
+                item(arguments);
+            })
         }
         console.log(list);
 
+
+        remove = function(key, fn){
+            var key = Array.prototype.shift.call(arguments);
+            if(list[key]){
+                list[key] = list[key].filter(function(item){
+                    return fn !== item;
+                });
+            }else{
+                console.log('要溢出的订阅不从在');
+            }
+        }
+
         return {
-            listen
+            listen,
+            trigger,
+            remove
         };
 
     })();
@@ -39,8 +58,12 @@
     }
 
     Event.listen('公众号',fn);
+    Event.listen('公众号',fn);
     Event.listen('lalala',fn);
 
+    Event.trigger('公众号');
+
+//    Event.remove('公众号',fn);
 </script>
 </body>
 </html>

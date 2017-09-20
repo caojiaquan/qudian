@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    new Promise(function(resolve, reject){
+//        resolve();
+        throw new Error('出错了');
+    }).then(function(){
+        console.log('success');
+    },function(){
+        console.log('fail');// 有这个回调函数后面的catch 就捕获不到错误了
+    }).catch(function(error){
+        console.log(error);
+    });
+</script>
+</body>
+</html>
