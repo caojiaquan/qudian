@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+
+    var thunk = function(fn){
+        return function(){
+            var args = Array.prototype.slice.call(arguments);
+            console.log(args);
+            return function(callback){
+                args.push(callback);
+                return fn.apply(this,args);
+            }
+        }
+    }
+    var bb = thunk(function(){
+        console.log('haha');
+    });
+    bb(function(){
+        return setTimeout(function(){
+            console.log('lalal');
+        },2000)
+    });
+
+
+
+    // ES6版本
+    const Thunk = function(fn) {
+        return function (...args) {
+            return function (callback) {
+                return fn.call(this, ...args, callback);
+            }
+        };
+    };
+
+</script>
+</body>
+</html>

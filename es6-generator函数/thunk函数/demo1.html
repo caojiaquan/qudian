@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    fs.readFile(fileName, callback);
+
+    //thunk函数的写法；
+    var thunk = function(fileName){
+        return function(callback){
+            return fs.readFile(fileName, callback);
+        }
+    };
+    var aa = thunk(fileName);
+    aa(callback);
+</script>
+</body>
+</html>

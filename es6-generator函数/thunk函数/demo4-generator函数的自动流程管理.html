@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function* gen() {
+        yield 123;
+        yield 456;
+    }
+
+    var g = gen();
+    var res = g.next();
+
+    while(!res.done){
+        console.log(res.value);
+        res = g.next();
+    }
+</script>
+</body>
+</html>
