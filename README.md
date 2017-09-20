@@ -42,7 +42,17 @@ generator函数的应用
 用法一：处理异步操作，改写回调函数。  
 二：数据流控制  
 三：给任意对象可以部署iterator接口  
-四：看做一种数据结构  
+四：看做一种数据结构 
+generator的自动流程管理的实现：   
+1. 基于thunk函数   
+- 通过把异步函数转化为一个只接受回调函数为参数的thunk函数，aa(fileName, callback);   -> 变为可以   aa(fileName) (callback);这样的调用形式，然后通过在callback里可以执行遍历器的next方法，控制把执行权交回来   
+- generator函数里的yield语法后边必须要跟一个thunk函数，可以持续执行  
+- generator函数的自动执行，需要做一个递归，前一个函数执行完之后会返回一个thunk函数，通过这个thunk函数继续去调用下一个yield 语法  
+2. 基于promise  
+- 把异步函数转化为一个可以返回promise对象的函数，通过then语法来执行  
+- generator函数里yield语法后需要跟一个返回promise的函数，  
+- 通过then方法来标识上一个异步回调函数返回，来控制遍历器指针向下移动，执行下一个yield语法后的异步函数  
+
 
 
 
