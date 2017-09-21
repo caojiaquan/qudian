@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+//    class Point {
+//        constructor(x, y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//        say(){
+//            console.log('hahaha');
+//        }
+//    }
+//
+//    class ColorPoint extends Point {
+//        constructor(x, y, color) {
+//            super(x, y);
+//            this.color = color; // 正确
+//        }
+//    }
+//
+//
+//    var bb = new ColorPoint(1,2, 'red');
+//    console.log(bb.color);
+//    bb.say();
+
+//
+//var n=999;
+//function f1(){
+//    alert(n);
+//}
+//f1(); // 999
+
+
+var name = "The Window";
+var object = {
+    name : "My Object",
+    getNameFunc : function(){
+        console.log('a', this);
+        return function(){
+            console.log('b',this);
+            return this.name;
+        };
+    }
+};
+console.log('c', object.getNameFunc()());  //The Window
+
+
+
+function f1(){
+    var n=999;
+    nAdd=function(){n+=1}
+    function f2(){
+        alert(n);
+    }
+    return f2;
+}
+var result=f1();
+result(); // 999
+nAdd();
+result(); // 1000
+
+
+</script>
+</body>
+</html>

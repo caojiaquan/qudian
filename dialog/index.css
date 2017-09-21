@@ -1,18 +1,24 @@
+html{
+	position:relative;
+
+	height: 2000px;
+}
 .dialog{
-	width:400px;
-	position: absolute;
+	width:330px;
+	position: fixed;
 	top:0;
-	bottom:0;
 	right: 0;
-	background: #009a61;
-	border-left:1px solid #009a61;
+	background: #FA6C41;
+	border-left:1px solid #FA6C41;
+	border-right:1px solid #FA6C41;
+	z-index:999999999;
 
 }
 
 .dialog-header{
-	background:#009a61;
+	background:#FA6C41;
 	color:white;
-	width:360px;
+	/*width:291px;*/
 	height:50px;
 	/*border:1px solid #ccc;*/
 	padding:0 20px;
@@ -29,12 +35,13 @@
 	font-size:12px;
 }
 .dialog-log{
+	cursor:pointer;
 	float: right;
 }
 .dialog-dialogue-box{
 
 	overflow: scroll;
-	height: 420px;
+	height: 400px;
 	background: #f1f1f1;
 }
 .iconfont.icon-triangle-right{
@@ -111,14 +118,15 @@
 }
 .dialog-footer{
 	width:100%;
-	border-top:1px solid #009a61;
-	position:absolute;
+	border-top:1px solid #FA6C41;
+	border-bottom:1px solid #FA6C41;
+	/*position:absolute;*/
 	overflow: hidden;
 }
 .dialog-footer textarea{
 	vertical-align: top;
 	width: 100%;
-	height: 140px;
+	height: 100px;
 	outline:medium;
 	border:none;
 	/*line-height: 0;*/
@@ -129,7 +137,7 @@
 	right:5px;
 }
 .dialog-submit button{
-	background:#009a61;
+	background:#FA6C41;
 	color:#fff;
 	border:none;
 }
@@ -143,15 +151,40 @@
 	display: inline-block;
 	width: 50px;
 	text-align: center;
-	position:absolute;
-	top:50%;
-	transform:translate(0,-50%);
-	left:-52px;
-	background: #000;
+	position:fixed;
+	bottom:0;
+	right:0;
 	color:#fff;
 	cursor: pointer;
+	z-index:99999999;
 }
 .dialog-message.select{
 	/*background: #f00;/*/
 	color:#f00;
+}
+.dialog-flex-box{
+	display:none;
+}
+.dialog-dialogue.left ol{
+	max-width:67%;
+	background:#ffe;
+	list-style:none;
+	margin-left: 50px;
+	padding: 10px 10px;
+	text-underline: none;
+	font-size:12px;
+	-webkit-box-shadow: 2px 3px 1px #ccc;
+	-moz-box-shadow: 2px 3px 1px #ccc;
+	box-shadow: 2px 3px 1px #ccc;
+}
+.dialog-dialogue.left ol li{
+	line-height: 18px;
+}
+.dialog-dialogue.left ol li a{
+	text-underline: none;
+	color:#000;
+	display: inherit;
+}
+.dialog-dialogue.left ol li a:hover{
+	color: red;
 }

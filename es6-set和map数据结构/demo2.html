@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+<script>
+
+
+
+
+//    var set = new Set([1, 2, 3, 2, 3, 5, 6]);
+//
+//    console.log(set);
+//    console.log([...set]);
+//    console.log(set.size);
+//    var dom = document.querySelector('div');
+
+    function divs () {
+        return [...document.querySelectorAll('div')];
+    }
+
+    let set = new Set(divs());
+    console.log(set);
+    set.size // 56
+
+    // 类似于
+    divs().forEach(div => set.add(div));
+    console.log(set);
+    set.size // 56
+
+</script>
 </body>
 </html>

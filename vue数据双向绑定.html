@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<input type="text" id="ipt">
+<h1>djsagidsajig</h1>
+<script>
+var obj = {};
+var oIpt = document.getElementById('ipt');
+    Object.defineProperty(obj, 'aa', {
+        get: function(){
+            return
+        },
+        set: function(value){
+            oH1 = document.getElementsByTagName('h1')[0];
+            oH1.innerHTML = value;
+        }
+    });
+
+    oIpt.onkeyup = function(){
+        obj.aa = this.value;
+    }
+
+</script>
 </body>
 </html>
